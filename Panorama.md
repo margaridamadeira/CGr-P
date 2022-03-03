@@ -6,15 +6,37 @@
 
 1. Instalar o Python
 1. Instalar os pacotes (`requirements.txt`)
+```
+    mkdir C:\Users\xxxxx\venvs
+    py -m venv C:\Users\xxxxx\venvs\CGr
+    C:\Users\xxxxx\venvs\CGr\Scripts\activate
+    py -m pip install -r requirements.txt
+```
+3. Instalar um editor (`VSCode` ou `Sublime Text`)
 
-> mkdir C:\Users\xxxxx\venvs
+### Testar o ambiente de trabalho
 
-> py -m venv C:\Users\xxxxx\venvs\CGr
+1. Abrir uma janela
 
-> C:\Users\xxxxx\venvs\CGr\Scripts\activate
+### Desenhar um ponto
+### Desenhar formas
 
-> py -m pip install -r requirements.txt
+### Uniforms
+#### Formas
+#### Posição
 
-1. Instalar um editor (`VSCode` ou `Sublime Text`)
+### Eventos
 
+### Álgebra matricial e transformações
+#### Vetores e matrizes
+#### Transformações geométricas
+
+### Grafo de cena
+#### Elementos 3D
+#### Elementos geométricos
+#### Materiais
+
+### Texturas
+
+### Iluminação
 
