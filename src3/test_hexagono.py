@@ -44,7 +44,7 @@ class Example(Base):
 
     def update(self):
         GL.glUseProgram(self.program_ref)
-        # GL.glDrawArrays(GL.GL_LINE_LOOP, 0 , self.vertex_count)
+        GL.glDrawArrays(GL.GL_LINE_LOOP, 0 , self.vertex_count)
         # GL.glDrawArrays(GL.GL_LINES, 0 , self.vertex_count)
         # GL.glDrawArrays(GL.GL_LINE_STRIP, 0 , self.vertex_count)
         # GL.glDrawArrays(GL.GL_TRIANGLES, 0, self.vertex_count)
