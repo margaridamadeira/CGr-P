@@ -1,3 +1,4 @@
+"""Basic window management allowing for time and user input"""
 import sys
 import pygame
 
@@ -28,6 +29,8 @@ class Base(object):
         self.clock = pygame.time.Clock()
         # manage user input
         self.input = Input()
+        # manage time in seconds
+        self.time = 0
 
     # implement by extending class
     def initialize(self):
@@ -43,6 +46,11 @@ class Base(object):
             self.input.update()
             if self.input.quit:
                 self.running = False
+            ## managing time
+            # seconds since run loop
+            self.deltaTime = self.clock.get_time()/1000
+            # update running time
+            self.time += self.deltaTime
             ## update ##
             self.update()
             ## render ##
