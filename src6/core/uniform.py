@@ -20,7 +20,7 @@ class Uniform:
 
     @data.setter
     def data(self, data):
-        """Changes data"""
+        """Exposes data"""
         self._data = data
 
     def locate_variable(self, program_ref, variable_name):
@@ -44,5 +44,5 @@ class Uniform:
             elif self._data_type == 'vec4':
                 GL.glUniform4f(self._variable_ref, self._data[0], self._data[1], self._data[2], self._data[3])
             elif self._data_type == 'mat4':
-                GL.glUniform4fv(self._variable_ref, 1, GL.GL_TRUE, self._data)
+                GL.glUniformMatrix4fv(self._variable_ref, 1, GL.GL_TRUE, self._data)
            
