@@ -1,4 +1,5 @@
 import OpenGL.GL as GL
+import pygame
 
 from core_ext.mesh import Mesh
 
@@ -9,8 +10,19 @@ class Renderer:
         # required for antialiasing
         GL.glEnable(GL.GL_MULTISAMPLE)
         GL.glClearColor(clear_color[0], clear_color[1], clear_color[2], 1)
+        self.window_size = pygame.display.get_surface().get_size()
 
-    def render(self, scene, camera, clear_color=True, clear_depth=True):
+    def render(self, scene, camera, clear_color=True, clear_depth=True, render_target=None):
+        # activate render target
+        if render_target == None:
+            # set render to window
+            GL.glBindFramebuffer(GL.GL_FRAMEBUFFER, 0)
+            GL.glViewport(0, 0, self.window_size[0], self.window_size[1])
+        else:
+            # set render target properties
+            GL.glBindFramebuffer(GL.GL_FRAMEBUFFER, render_target.framebuffer_ref)
+            GL.glViewport(0, 0, render_target.width, render_target.height)
+            
         if clear_color:
             # Clear color
             GL.glClear(GL.GL_COLOR_BUFFER_BIT)
